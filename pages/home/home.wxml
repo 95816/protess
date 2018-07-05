@@ -1,0 +1,9 @@
+<!--pages/home/home.wxml-->
+
+<view>
+  <swiper>
+  
+  </swiper>
+  <view>test</view>
+</view>
+
