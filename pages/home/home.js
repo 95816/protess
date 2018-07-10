@@ -21,8 +21,17 @@ Page({
 
   _loadData: function() {
     var id = 1;
-    var data = home.getBannerData(id, (res) => {
+    home.getBannerData(id, (res) => {
+      this.setData({
+        'bannerArr': res
+      })
+    });
+    var ids = '1,2,3';
+    home.getThemeData(ids, (res) => {
       console.log(res);
+      this.setData({
+        'themeArr': res
+      })
     });
   },
 
