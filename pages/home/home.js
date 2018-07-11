@@ -20,19 +20,28 @@ Page({
   },
 
   _loadData: function() {
+    //首页banner位
     var id = 1;
     home.getBannerData(id, (res) => {
       this.setData({
         'bannerArr': res
       })
     });
+    //首页主题
     var ids = '1,2,3';
     home.getThemeData(ids, (res) => {
-      console.log(res);
       this.setData({
         'themeArr': res
       })
     });
+    //首页最近新品
+    home.getProductsData((res) => {
+      console.log(res);
+      this.setData({
+        'productsArr': res
+      })
+    });
+
   },
 
   /**

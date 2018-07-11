@@ -6,7 +6,7 @@ class Home extends Base {
   constructor() {
     super();
   }
-
+  //获取banner
   getBannerData(id, callback) {
     var params = {
       url: 'banner/' + id,
@@ -23,7 +23,7 @@ class Home extends Base {
     //   }
     // })
   }
-
+  //获取主题数据
   getThemeData(ids, callback) {
     var params = {
       url: 'theme?ids=' + ids,
@@ -31,9 +31,20 @@ class Home extends Base {
         callback && callback(data);
       }
     }
-    console.log(params.url);
     this.request(params);
   }
+
+  //获取最近新品
+  getProductsData(callback) {
+    var params = {
+      url: 'product/recent',
+      sCallback: function(data) {
+        callback && callback(data);
+      }
+    }
+    this.request(params);
+  }
+
 }
 
 export {
