@@ -36,12 +36,28 @@ Page({
     });
     //首页最近新品
     home.getProductsData((res) => {
-      console.log(res);
       this.setData({
         'productsArr': res
       })
     });
 
+  },
+
+  onProductsItemTap: function(event) {
+    var id = null;
+    id = home.getDataSet(event, 'id');
+    wx.navigateTo({
+      url: '../product/product?id=' + id,
+    })
+  },
+
+  onThemesItemTap: function(event) {
+    var id = home.getDataSet(event, 'id');
+    var name = home.getDataSet(event, 'name');
+    console.log(id);
+    wx.navigateTo({
+      url: '../theme/theme?id=' + id + '&name=' + name,
+    })
   },
 
   /**
