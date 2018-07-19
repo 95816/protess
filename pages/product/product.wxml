@@ -1,2 +1,27 @@
-<!--pages/product/product.wxml-->
-<text>pages/product/product.wxml</text>
+<view class='container detail-container'>
+  <view class='detail-header-box'>
+    <!--购物车小图标-->
+    <view class='fixed-btns-box'>
+      <view class='fixed-cart'>
+        <image src='../../imgs/icon/cart@top.png'></image>
+      </view>
+    </view>
+    <!--商品头图-->
+    <view class='detail-topic-img'>
+      <image src='{{product.main_img_url}}' mode="aspectFit"></image>
+    </view>
+    <view class='cart-box'>
+    </view>
+    <!--购物车部分-->
+    <view class='basic-info-box'>
+      <!--选择数量组件-->
+      <view class='product-counts'></view>
+      <!--中间的细线-->
+      <view class='middle-border'></view>
+      <!--右边的添加按钮-->
+      <view class='add-cart-btn'></view>
+    </view>
+  </view>
+  <view class='detail-bottom-box'>
+  </view>
+</view>

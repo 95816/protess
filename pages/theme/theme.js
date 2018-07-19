@@ -20,6 +20,7 @@ Page({
     var name = options.name;
     this.data.id = id;
     this.data.name = name;
+    
     this._loadData();
   },
   _loadData: function() {
@@ -27,6 +28,12 @@ Page({
       this.setData({
         'themeInfo': res
       });
+    })
+  },
+  //加载完成设置导航栏标题
+  onReady:function(){
+    wx.setNavigationBarTitle({
+      title: this.data.name,
     })
   }
 })

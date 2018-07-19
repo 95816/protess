@@ -1,11 +1,15 @@
 // pages/product/product.js
+import {
+  Product
+} from './product-model.js';
+var product = new Product();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id: null,
   },
 
   /**
@@ -13,8 +17,18 @@ Page({
    */
   onLoad: function(options) {
     var id = options.id;
-    console.log(id);
+    this.data.id = id;
+    this._loadData();
   },
+
+  _loadData: function() {
+    product.getDetailInfo(this.data.id, (res) => {
+      this.setData({
+        product: res
+      })
+    })
+  }
+
 
 
 })
