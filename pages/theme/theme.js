@@ -23,6 +23,14 @@ Page({
     
     this._loadData();
   },
+  onProductsItemTap: function (event) {
+    var id = null;
+    id = theme.getDataSet(event, 'id');
+    wx.navigateTo({
+      url: '../product/product?id=' + id,
+    })
+  },
+
   _loadData: function() {
     theme.getProductsData(this.data.id, (res) => {
       this.setData({

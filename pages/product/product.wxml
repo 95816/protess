@@ -11,15 +11,23 @@
       <image src='{{product.main_img_url}}' mode="aspectFit"></image>
     </view>
     <view class='cart-box'>
-    </view>
-    <!--购物车部分-->
-    <view class='basic-info-box'>
       <!--选择数量组件-->
-      <view class='product-counts'></view>
+      <view class='product-counts'>
+        <picker class="product.stock==0?'disabled':''}}" range="{{countsArray}}" bindchange="bindPickerChange">
+          <view>
+            <text class="counts-tips">数量</text>
+            <text class="counts-data">{{prodcutsCount}}</text>
+            <image class="counts-icon" src="../../imgs/icon/arrow@down.png"></image>
+          </view>
+        </picker>
+      </view>
       <!--中间的细线-->
       <view class='middle-border'></view>
       <!--右边的添加按钮-->
       <view class='add-cart-btn'></view>
+    </view>
+    <!--购物车部分-->
+    <view class='basic-info-box'>
     </view>
   </view>
   <view class='detail-bottom-box'>
