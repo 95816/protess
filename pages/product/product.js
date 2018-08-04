@@ -11,7 +11,7 @@ Page({
   data: {
     id: null,
     countsArray:[1,2,3,4,5,6,7,8,9,10],
-    prodcutsCount:1
+    productsCount:1
   },
 
   /**
@@ -25,6 +25,7 @@ Page({
 
   _loadData: function() {
     product.getDetailInfo(this.data.id, (res) => {
+      console.log(res);
       this.setData({
         product: res
       })
@@ -35,7 +36,7 @@ Page({
     var index = event.detail.value;
     var selectedCount = this.data.countsArray[index];
     this.setData({
-      prodcutsCount:selectedCount
+      productsCount:selectedCount
     })
   }
 

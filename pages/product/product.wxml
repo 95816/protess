@@ -13,23 +13,38 @@
     <view class='cart-box'>
       <!--选择数量组件-->
       <view class='product-counts'>
-        <picker class="product.stock==0?'disabled':''}}" range="{{countsArray}}" bindchange="bindPickerChange">
+        <picker class="{{product.stock==0?'disabled':''}}" range="{{countsArray}}" bindchange="bindPickerChange">
           <view>
             <text class="counts-tips">数量</text>
-            <text class="counts-data">{{prodcutsCount}}</text>
+            <text class="counts-data">{{productsCount}}</text>
             <image class="counts-icon" src="../../imgs/icon/arrow@down.png"></image>
           </view>
         </picker>
       </view>
       <!--中间的细线-->
       <view class='middle-border'></view>
-      <!--右边的添加按钮-->
-      <view class='add-cart-btn'></view>
+      <!--右边的加入购物车-->
+      <view class="add-cart-btn {{product.stock==0?'disabled':''}}">
+        <text>加入购物车</text>
+        <image class="cart-icon" src="../../imgs/icon/cart.png"></image>
+      </view>
     </view>
-    <!--购物车部分-->
+    <!--商品名称价格.是否有货-->
     <view class='basic-info-box'>
+      <view class='stock' wx:if="{{product.stock>0}}">有货</view>
+      <view class='stock no' wx:else>缺货</view>
+      <view class='name'>{{product.name}}</view>
+      <view class='price'>{{product.price}}</view>
     </view>
   </view>
   <view class='detail-bottom-box'>
+    <view class='tabs-box'>
+      <block wx:for="{{['商品详情','产品参数','售后保障']}}">
+        <view class='tabs-item'>
+        {{item}}
+        </view>
+      </block>
+    </view>
+    <view class='product-detail-box'></view>
   </view>
 </view>
