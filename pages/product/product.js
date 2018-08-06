@@ -10,8 +10,9 @@ Page({
    */
   data: {
     id: null,
-    countsArray:[1,2,3,4,5,6,7,8,9,10],
-    productsCount:1
+    countsArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    productsCount: 1,
+    currentTabsIndex: 0
   },
 
   /**
@@ -32,11 +33,18 @@ Page({
     })
   },
 
-  bindPickerChange: function (event){
+  bindPickerChange: function(event) {
     var index = event.detail.value;
     var selectedCount = this.data.countsArray[index];
     this.setData({
-      productsCount:selectedCount
+      productsCount: selectedCount
+    })
+  },
+
+  onTabsItemTap: function(event) {
+    var index = product.getDataSet(event, 'index');
+    this.setData({
+      currentTabsIndex: index
     })
   }
 
